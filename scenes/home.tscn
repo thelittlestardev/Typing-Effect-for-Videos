@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://sbec3xl1j8hj"]
+
+[ext_resource type="Texture2D" uid="uid://cx171x152rmif" path="res://art/background.png" id="1_krot7"]
+[ext_resource type="Script" uid="uid://0rm2m07xlqme" path="res://scripts/home.gd" id="1_u4wd2"]
+[ext_resource type="Texture2D" uid="uid://bq7pvunk3qe7h" path="res://art/button_ok.png" id="3_reixx"]
+[ext_resource type="Texture2D" uid="uid://bvsuthiqthqae" path="res://art/button_ok_focus.png" id="4_uhids"]
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4wd2")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.5882885, 0.58828855, 0.5882885, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_krot7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 235.0
+offset_bottom = 582.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Write the text using \"\\\" to separate paragraphs.
+Keep each paragraph to a maximum of 11 characters.
+Use a maximum of 4 paragraphs.
+
+Example:
+TYPING\\EFFECT\\FOR VIDEOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 83.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+placeholder_text = "WRITE HERE"
+alignment = 1
+
+[node name="StartBtn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -335.0
+offset_right = 143.0
+offset_bottom = -218.0
+grow_horizontal = 2
+grow_vertical = 0
+action_mode = 0
+texture_normal = ExtResource("3_reixx")
+texture_hover = ExtResource("4_uhids")
+
+[node name="Label" type="Label" parent="StartBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.02782452, 0.027824525, 0.027824525, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 48
+text = "START"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="StartBtn" to="." method="_on_start_button_down"]

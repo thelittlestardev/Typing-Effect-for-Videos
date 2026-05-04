@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Typing Effect for Videos"
+run/main_scene="uid://sbec3xl1j8hj"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="uid://ur7on4wugc1i"
+config/windows_native_icon="res://art/logo_icon.ico"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/gleic/Desktop/typing_effect_for_videos_movie.avi"
